@@ -1,12 +1,17 @@
-function calcularPromedio(){
-    let cantidadNotas = parseInt(prompt("Ingrese la cantidad de notas a promediar:"));
-    let sumaNotas = 0;
-    for(let i = 0; i < cantidadNotas; i++){
-        let nota = parseFloat(prompt(`Ingrese la nota ${i + 1}:`));
-        sumaNotas += nota;
+function promedio() {
+    let cantidad =parseInt(prompt("¿Cuántos números deseas promediar?"));
+    if (cantidad <= 0 || isNaN(cantidad)) {
+        alert("Por favor ingresa un número válido mayor que cero.");
+    }else{
+    let suma = 0;
+    for (let i = 0; i < cantidad; i++) {
+        let numero = parseFloat(prompt("Ingresa el número " + (i + 1) + ":"));
+        suma += numero;
     }
-    let promedio = sumaNotas / cantidadNotas;
-    alert(`El promedio de las notas es: ${promedio}`);
-}
-calcularPromedio();               
+    let promedio = suma / cantidad;
+    alert(promedio);
+    } 
+}     
+promedio();
+
 
